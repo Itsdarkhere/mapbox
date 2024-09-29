@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.accessToken = "pk.eyJ1Ijoianh2b25lbiIsImEiOiJjbTFrcHJ6ODcwMHRhMmpzMDV3dHc2bXo2In0.JiA2oBiRLKc68RpExlFNdg";
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX!
 
 interface VenueMapProps {
   tilesetId: string;
