@@ -25,7 +25,7 @@ const VenueMap: React.FC<VenueMapProps> = ({ tilesetId }) => {
         layers: []
       },
       center: [0, 0],
-      zoom: 2,
+      zoom: 0,
       attributionControl: false,
     });
 
@@ -45,7 +45,7 @@ const VenueMap: React.FC<VenueMapProps> = ({ tilesetId }) => {
     if (!mapLoaded || !map.current) return;
 
     // Add the source for your tileset
-    map.current.addSource("venue", {
+    map.current.addSource("venue_custom", {
       type: "vector",
       url: `mapbox://${tilesetId}`,
     });
@@ -54,8 +54,8 @@ const VenueMap: React.FC<VenueMapProps> = ({ tilesetId }) => {
     map.current.addLayer({
       id: "venue-layer",
       type: "fill",
-      source: "venue",
-      "source-layer": "venue", // Make sure this matches your tileset layer name
+      source: "venue_custom",
+      "source-layer": "venue_custom", // Make sure this matches your tileset layer name
       paint: {
         "fill-color": [
           "match",
